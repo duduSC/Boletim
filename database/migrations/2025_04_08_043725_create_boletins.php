@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->float("nota");
             $table->string("semestre",7);
-            $table->unsignedInteger("alunos_matricula");
+            $table->unsignedInteger("alunos_matricula");// coluna que só tem numeros positvos
             $table->unsignedInteger("professores_id");
             $table->unsignedInteger("materias_id");
             $table->foreign("alunos_matricula","alunos_fkeys")
-                    ->references("matricula")
+                    ->references("id")
                     ->on("alunos");
             $table->foreign("professores_id","professores_fkeys")
                     ->references("id")
