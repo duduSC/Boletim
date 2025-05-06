@@ -9,9 +9,12 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::view('dashboard', 'dashboard')
+Route::view('Home', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
+
+Route::view('Produtos', 'produtos.index');
+
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
