@@ -43,7 +43,8 @@ class AlunosController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $aluno= Aluno::findOrFail($id);
+        return view("alunos.show",['aluno'=> $aluno]);
     }
 
     /**
@@ -51,7 +52,8 @@ class AlunosController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $aluno= Aluno::findOrFail($id);
+        return view("alunos.edit",compact("aluno"));
     }
 
     /**
@@ -59,7 +61,13 @@ class AlunosController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $aluno= Aluno::findOrFail($id);
+        $aluno->update([
+            "nome"=> $request->input("nome"),
+            "telefone"=> $request->input("telefone"),
+            "email"=> $request->input("email"),
+        ]);
+        return redirect()->route("alunos.index");
     }
 
     /**
@@ -67,6 +75,8 @@ class AlunosController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $aluno = Aluno::findOrFail($id);
+        $aluno->delete();
+        return redirect()->route("alunos.index");
     }
 }

@@ -14,7 +14,7 @@
                     <input type="text" name="telefone">
                 </div>
                 <div class="form-group">
-                    <label for="">Email:</label>
+                    <label for="email">Email:</label>
                     <input type="text" name="email">
                 </div>
                 <input class="button" type="submit" value="Enviar"></input>
