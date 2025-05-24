@@ -9,7 +9,6 @@
                 <th>Telefone:</th>
                 <th>Email:</th>
                 <th>Ver mais:</th>
-                <th>Editar:</th>
                 <th>Excluir:</th>
             </tr>
         </thead>
@@ -21,11 +20,7 @@
                 <td>{{$aluno->email}}</td>
                 <td>
                     <a style="background-color: green;" href="{{ route('alunos.show',$aluno)}}">Ver mais + </a>  
-                </td>   
-                <td>
-                    <button style="background-color: yellow;">Editar </button>
                 </td>
-                
                     <td>
                         <form action="{{ route("alunos.destroy",$aluno->id)}}" method="post">
                     @csrf
