@@ -3,25 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Aluno;
-
-class AlunosController extends Controller
+use App\Models\Professor;
+class MateriasController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $alunos = Aluno::all();
-        return view("alunos.index", compact("alunos"));
+        $materias= materias::all();
+        return view("materiases.index",compact("materias"));
     }
 
     /**
      * Show the form for creating a new resource.
-     */ 
+     */
     public function create()
     {
-        return view("alunos.create");
+        return view("materiases.create");
     }
 
     /**
@@ -29,22 +28,21 @@ class AlunosController extends Controller
      */
     public function store(Request $request)
     {
-        $aluno = new Aluno([
-            "nome"=> $request->input("nome"),
+        $materias= new materias([
+            "nome" => $request->input("nome"),
             "telefone"=> $request->input("telefone"),
             "email"=> $request->input("email")
         ]);
-        $aluno->save();  
-        return redirect()->route("alunos.index");
+        $materias->save();
+        return redirect()->route("materiases.index");
     }
-
     /**
      * Display the specified resource.
      */
     public function show(string $id)
     {
-        $aluno= Aluno::findOrFail($id);
-        return view("alunos.show",['aluno'=> $aluno]);
+        $materias= materias::findOrFail($id);
+        return view("materiases.show",compact("materias"));
     }
 
     /**
@@ -52,8 +50,8 @@ class AlunosController extends Controller
      */
     public function edit(string $id)
     {
-        $aluno= Aluno::findOrFail($id);
-        return view("alunos.edit",compact("aluno"));
+        $materias= disciplinas::findOrFail($id);
+        return view("disciplinases.edit",compact("disciplinas"));
     }
 
     /**
@@ -61,14 +59,8 @@ class AlunosController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $aluno= Aluno::findOrFail($id);
-        
-        $aluno->update([
-            "nome"=> $request->input("nome"),
-            "telefone"=> $request->input("telefone"),
-            "email"=> $request->input("email"),
-        ]);
-        return redirect()->route("alunos.index");
+        $professor= Professor::findOrFail($id);
+        $professor->update($request->all());
     }
 
     /**
@@ -76,8 +68,6 @@ class AlunosController extends Controller
      */
     public function destroy(string $id)
     {
-        $aluno = Aluno::findOrFail($id);
-        $aluno->delete();
-        return redirect()->route("alunos.index");
+        //
     }
 }
