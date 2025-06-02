@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "7e2139ae081210d6acb4f5c69086a654",
+=======
+    "content-hash": "68c673ab9e26ada87f479c13644d6bdd",
+>>>>>>> 105855a564a0099631dd7846b99b9c06d967fce7
     "packages": [
         {
             "name": "brick/math",
@@ -6000,6 +6004,7 @@
     "packages-dev": [
         {
             "name": "barryvdh/laravel-debugbar",
+<<<<<<< HEAD
             "version": "v3.15.4",
             "source": {
                 "type": "git",
@@ -6010,6 +6015,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/c0667ea91f7185f1e074402c5788195e96bf8106",
                 "reference": "c0667ea91f7185f1e074402c5788195e96bf8106",
+=======
+            "version": "v3.15.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/laravel-debugbar.git",
+                "reference": "0bc1e1361e7fffc2be156f46ad1fba6927c01729"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/0bc1e1361e7fffc2be156f46ad1fba6927c01729",
+                "reference": "0bc1e1361e7fffc2be156f46ad1fba6927c01729",
+>>>>>>> 105855a564a0099631dd7846b99b9c06d967fce7
                 "shasum": ""
             },
             "require": {
@@ -6020,6 +6037,12 @@
                 "php-debugbar/php-debugbar": "~2.1.1",
                 "symfony/finder": "^6|^7"
             },
+<<<<<<< HEAD
+=======
+            "conflict": {
+                "maximebf/debugbar": "*"
+            },
+>>>>>>> 105855a564a0099631dd7846b99b9c06d967fce7
             "require-dev": {
                 "mockery/mockery": "^1.3.3",
                 "orchestra/testbench-dusk": "^7|^8|^9|^10",
@@ -6069,7 +6092,11 @@
             ],
             "support": {
                 "issues": "https://github.com/barryvdh/laravel-debugbar/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/barryvdh/laravel-debugbar/tree/v3.15.4"
+=======
+                "source": "https://github.com/barryvdh/laravel-debugbar/tree/v3.15.2"
+>>>>>>> 105855a564a0099631dd7846b99b9c06d967fce7
             },
             "funding": [
                 {
@@ -6081,7 +6108,11 @@
                     "type": "github"
                 }
             ],
+<<<<<<< HEAD
             "time": "2025-04-16T06:32:06+00:00"
+=======
+            "time": "2025-02-25T15:25:22+00:00"
+>>>>>>> 105855a564a0099631dd7846b99b9c06d967fce7
         },
         {
             "name": "fakerphp/faker",
