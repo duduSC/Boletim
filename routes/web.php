@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AlunosController;
+use App\Http\Controllers\MateriasController;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
@@ -14,8 +15,6 @@ Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-Route::view('Produtos', 'produtos.index');
-
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
@@ -26,5 +25,9 @@ Route::middleware(['auth'])->group(function () {
 });
 Route::resource('alunos',AlunosController::class)
     ->only('index','create','update','store','show','edit','destroy');
+
+Route::resource('materias',MateriasController::class)
+    ->only('index','create','update','store','show','edit','destroy');
+
 
 require __DIR__.'/auth.php';

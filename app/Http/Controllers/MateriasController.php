@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Professor;
+use App\Models\Materia;
 class MateriasController extends Controller
 {
     /**
@@ -11,8 +11,8 @@ class MateriasController extends Controller
      */
     public function index()
     {
-        $materias= materias::all();
-        return view("materiases.index",compact("materias"));
+        $materias= Materia::all();
+        return view("materias.index",compact("materias"));
     }
 
     /**
@@ -20,7 +20,7 @@ class MateriasController extends Controller
      */
     public function create()
     {
-        return view("materiases.create");
+        return view("materias.create");
     }
 
     /**
@@ -28,21 +28,20 @@ class MateriasController extends Controller
      */
     public function store(Request $request)
     {
-        $materias= new materias([
+        $materias= new Materia([
             "nome" => $request->input("nome"),
-            "telefone"=> $request->input("telefone"),
-            "email"=> $request->input("email")
+            "carga_horaria"=> $request->input("carga_horaria"),
         ]);
         $materias->save();
-        return redirect()->route("materiases.index");
+        return redirect()->route("materias.index");
     }
     /**
      * Display the specified resource.
      */
     public function show(string $id)
     {
-        $materias= materias::findOrFail($id);
-        return view("materiases.show",compact("materias"));
+        $materia= Materia::findOrFail($id);
+        return view("materias.show",compact("materia"));
     }
 
     /**
@@ -50,8 +49,8 @@ class MateriasController extends Controller
      */
     public function edit(string $id)
     {
-        $materias= disciplinas::findOrFail($id);
-        return view("disciplinases.edit",compact("disciplinas"));
+        $materia= Materia::findOrFail($id);
+        return view("materias.edit",compact("materia"));
     }
 
     /**
@@ -59,8 +58,9 @@ class MateriasController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $professor= Professor::findOrFail($id);
-        $professor->update($request->all());
+        $materia= Materia::findOrFail($id);
+        $materia->update($request->all());
+        return view("materias.index");
     }
 
     /**
@@ -68,6 +68,8 @@ class MateriasController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $materia = Materia::findOrFail($id);
+        $materia->delete();
+        return redirect()->route("materias.index");
     }
 }
