@@ -7,11 +7,11 @@
             </button>
             </a>
             <div class=" mx-auto px-4">
-                <h1 class="text-3xl font-bold text-center mb-5">Cadastrar Novo Aluno</h1>
+                <h1 class="text-3xl font-bold text-center mb-5">Cadastrar Nova Materia</h1>
 
                 <form
                     class="bg-sky-100 p-6 rounded-xl shadow-2xl flex flex-col space-y-5"
-                    action="{{ route('alunos.store') }}"
+                    action="{{ route('materias.store') }}"
                     method="post">
                     @csrf
 
@@ -19,19 +19,13 @@
                     <input type="text" name="nome"
                         class="w-full px-4 py-2.5 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm 
                         placeholder-gray-400"
-                        placeholder="Nome completo" required>
+                        placeholder="Português" required>
 
-                    <label for="telefone" class=" text-lg font-semibold mb-1">Telefone:</label>
-                    <input type="text" name="telefone"
-                        class="w-full px-4 py-2.5 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm 
-                         placeholder-gray-400"
-                        placeholder="(XX) XXXXX-XXXX">
-
-                    <label for="email" class=" text-lg font-semibold mb-1">Email:</label>
-                    <input type="email" name="email"
+                    <label for="carga_horaria" class=" text-lg font-semibold mb-1">Carga Horária:</label>
+                    <input type="carga_horaria" name="carga_horaria"
                         class="w-full px-4 py-2.5 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm
                         placeholder-gray-400"
-                        placeholder="email@exemplo.com">
+                        placeholder="30" required>
 
                     <input
                         class="w-full bg-cyan-500/50 hover:bg-cyan-500 text-white font-bold py-3 px-4 rounded-lg shadow-md 

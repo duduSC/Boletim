@@ -4,37 +4,31 @@
         <div class="max-w-xl mx-auto px-6">
 
             <div class="text-center mb-10">
-                <h1 class="text-3xl font-bold">Editar Aluno</h1>
+                <h1 class="text-3xl font-bold">Editar Materia</h1>
             </div>
 
-            <form action="{{ route('alunos.update', $aluno) }}" method="post"
+            <form action="{{ route('materias.update', $materia) }}" method="post"
                 class="bg-sky-300/30 p-8 rounded-xl shadow-2xl flex flex-col space-y-6">
                 @csrf
                 @method('PUT')
 
                 <div>
                     <label for="nome" class=" text-sm font-semibold mb-1.5">Nome Completo:</label>
-                    <input type="text" id="nome" name="nome" value="{{ old('nome', $aluno->nome) }}"
+                    <input type="text" id="nome" name="nome" value="{{ old('nome', $materia->nome) }}"
                         class="w-full px-4 py-2.5 border border-gray-300 rounded-lg shadow-sm bg-slate-50/70"
-                        placeholder="Nome completo do aluno" required>
+                        placeholder="{{ $materia->nome }}" required>
                 </div>
 
-                <div>
-                    <label for="telefone" class="block text-sm font-semibold mb-1.5">Telefone:</label>
-                    <input type="text" id="telefone" name="telefone" value="{{ old('telefone', $aluno->telefone) }}"
-                        class="w-full px-4 py-2.5 border border-gray-300 rounded-lg shadow-sm bg-slate-50/70"
-                        placeholder="{{$aluno->telefone}}">
-                </div>
 
                 <div>
                     <label for="email" class="block text-sm font-semibold text-gray-70 mb-1.5">Email:</label>
-                    <input type="email" id="email" name="email" value="{{ old('email', $aluno->email) }}" {{-- Tipo mudado para 'email' --}}
+                    <input type="email" id="email" name="email" value="{{ old('email', $materia->carga_horaria) }}" {{-- Tipo mudado para 'email' --}}
                         class="w-full px-4 py-2.5 border border-gray-300 bg-slate-50/70 rounded-lg shadow-sm"
-                        placeholder="{{ $aluno->email }}" required>
+                        placeholder="{{ $materia->email }}" required>
                 </div>
 
                 <div class="pt-5 flex flex-row-reverse justify-start space-x-4 space-x-reverse space-y-0">
-                    <a href="{{ route('alunos.show', $aluno) }}"
+                    <a href="{{ route('materias.show', $materia) }}"
                         class="w-full sm:w-auto inline-flex justify-center items-center px-6 py-3 border rounded-lg shadow-md border-gray-300 bg-red-600 hover:bg-red-700">
                         Cancelar </a>
 

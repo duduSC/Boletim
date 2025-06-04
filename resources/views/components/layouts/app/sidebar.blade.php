@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="light">
     <head>
         @include('partials.head')
     </head>
@@ -15,7 +15,9 @@
             <flux:navlist variant="outline">
                 <flux:navlist.group :heading="__('Platform')" class="grid">
                     <flux:navlist.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
-                    <flux:navlist.item :href="route('alunos.index')">Alunos</flux:navlis.item>
+                    <flux:navlist.item icon="queue-list" :href="route(name: 'alunos.index')">Alunos</flux:navlis.item>
+                    <flux:navlist.item icon="queue-list" :href="route(name: 'materias.index')">Materias</flux:navlis.item>
+
                 </flux:navlist.group>
             </flux:navlist>
 
