@@ -5,7 +5,11 @@
         "This file is @generated automatically"
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
     "content-hash": "7e2139ae081210d6acb4f5c69086a654",
+=======
+    "content-hash": "68c673ab9e26ada87f479c13644d6bdd",
+>>>>>>> 105855a564a0099631dd7846b99b9c06d967fce7
 =======
     "content-hash": "68c673ab9e26ada87f479c13644d6bdd",
 >>>>>>> 105855a564a0099631dd7846b99b9c06d967fce7
@@ -6005,6 +6009,7 @@
         {
             "name": "barryvdh/laravel-debugbar",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "v3.15.4",
             "source": {
                 "type": "git",
@@ -6016,6 +6021,8 @@
                 "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/c0667ea91f7185f1e074402c5788195e96bf8106",
                 "reference": "c0667ea91f7185f1e074402c5788195e96bf8106",
 =======
+=======
+>>>>>>> 105855a564a0099631dd7846b99b9c06d967fce7
             "version": "v3.15.2",
             "source": {
                 "type": "git",
@@ -6026,6 +6033,9 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/0bc1e1361e7fffc2be156f46ad1fba6927c01729",
                 "reference": "0bc1e1361e7fffc2be156f46ad1fba6927c01729",
+<<<<<<< HEAD
+>>>>>>> 105855a564a0099631dd7846b99b9c06d967fce7
+=======
 >>>>>>> 105855a564a0099631dd7846b99b9c06d967fce7
                 "shasum": ""
             },
@@ -6038,6 +6048,12 @@
                 "symfony/finder": "^6|^7"
             },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            "conflict": {
+                "maximebf/debugbar": "*"
+            },
+>>>>>>> 105855a564a0099631dd7846b99b9c06d967fce7
 =======
             "conflict": {
                 "maximebf/debugbar": "*"
@@ -6093,7 +6109,11 @@
             "support": {
                 "issues": "https://github.com/barryvdh/laravel-debugbar/issues",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/barryvdh/laravel-debugbar/tree/v3.15.4"
+=======
+                "source": "https://github.com/barryvdh/laravel-debugbar/tree/v3.15.2"
+>>>>>>> 105855a564a0099631dd7846b99b9c06d967fce7
 =======
                 "source": "https://github.com/barryvdh/laravel-debugbar/tree/v3.15.2"
 >>>>>>> 105855a564a0099631dd7846b99b9c06d967fce7
@@ -6109,7 +6129,11 @@
                 }
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2025-04-16T06:32:06+00:00"
+=======
+            "time": "2025-02-25T15:25:22+00:00"
+>>>>>>> 105855a564a0099631dd7846b99b9c06d967fce7
 =======
             "time": "2025-02-25T15:25:22+00:00"
 >>>>>>> 105855a564a0099631dd7846b99b9c06d967fce7

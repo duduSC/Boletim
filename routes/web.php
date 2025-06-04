@@ -22,9 +22,12 @@ Route::view('dashboard', 'dashboard') //uri é o que tu pesquisa no navegador //
     Route::view('teste', 'teste')
     ->middleware(['auth', 'verified'])
     ->name('teste');
+<<<<<<< HEAD
 
 Route::view('Produtos', 'produtos.index');
 
+=======
+>>>>>>> 105855a564a0099631dd7846b99b9c06d967fce7
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
