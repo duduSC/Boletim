@@ -11,9 +11,9 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+Route::view('dashboard', 'dashboard') //uri é o que tu pesquisa no navegador //view é o caminho utilizado nas pastas
+    ->middleware(['auth', 'vnerified']) //verifica se esta logado
+    ->name('dashboard'); // show de bola marcio
 
 
 Route::middleware(['auth'])->group(function () {

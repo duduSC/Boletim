@@ -15,7 +15,11 @@ return new class extends Migration
             $table->id();
             $table->float("nota");
             $table->string("semestre",7);
-            $table->unsignedInteger("alunos_matricula");// coluna que só tem numeros positvos
+<<<<<<< HEAD
+
+=======
+>>>>>>> 105855a564a0099631dd7846b99b9c06d967fce7
+            $table->unsignedInteger("alunos_matricula");// só pode ter integer positivos
             $table->unsignedInteger("professores_id");
             $table->unsignedInteger("materias_id");
             $table->foreign("alunos_matricula","alunos_fkeys")
@@ -39,4 +43,8 @@ return new class extends Migration
     {
         Schema::dropIfExists('boletins');
     }
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> 105855a564a0099631dd7846b99b9c06d967fce7
