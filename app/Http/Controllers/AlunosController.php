@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Aluno;
-
+use Illuminate\Support\Str; 
 class AlunosController extends Controller
 {
     /**
@@ -32,9 +32,18 @@ class AlunosController extends Controller
         $aluno = new Aluno([
             "nome"=> $request->input("nome"),
             "telefone"=> $request->input("telefone"),
-            "email"=> $request->input("email")
+            "email"=> $request->input("email"),
+            "image"=> "images/user_image.png"
         ]);
         $aluno->save();  
+
+        $nomeArquivo= Str::slug($request->input("nome"))."_"."foto".$aluno->id;
+        $imagem = 'images/user_image.png';
+        if ($request->hasFile("image")) {
+            $imagem= $request->file("image")->storeAs("images",$nomeArquivo,"public");
+        }
+        $aluno->image = $imagem;
+        $aluno->save();
         return redirect()->route("alunos.index");
     }
 

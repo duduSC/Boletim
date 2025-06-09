@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string("nome",50);
             $table->string("telefone",16);
             $table->string("email",70);
+            $table->string('image');
             $table->timestamps();
             
         });

@@ -1,14 +1,9 @@
 <?php
-<<<<<<< HEAD
-namespace App\Http\Controllers;
-
-use App\Models\Professor;
-=======
 
 namespace App\Http\Controllers;
->>>>>>> 105855a564a0099631dd7846b99b9c06d967fce7
 
 use Illuminate\Http\Request;
+use App\Models\Professor;
 
 class ProfessorController extends Controller
 {
@@ -51,20 +46,10 @@ class ProfessorController extends Controller
     }
 
     public function update(Request $request, string $id)
-<<<<<<< HEAD
-    { 
-        $professor =Professor::findOrFail($id);
-        $professor->update([
-            'nome'=>$request->input('nome'),
-            'telefone'=>$request->input('telefone'),
-            'email'=>$request->input('email')
-        ]);
-        return redirect()->route('professores.index');
-=======
     {
-        
-        $professor->update($professores)
->>>>>>> 105855a564a0099631dd7846b99b9c06d967fce7
+        $professor= Professor::findOrFail($id);    
+        $professor->update($request->all());
+        return view('professores.index');
     }
 
     /**
@@ -72,12 +57,8 @@ class ProfessorController extends Controller
      */
     public function destroy(string $id) 
     {
-<<<<<<< HEAD
         $professor = Professor::findOrFail($id);
         $professor->delete();
-        return redirect()->route('professores.index');
-=======
-        //
->>>>>>> 105855a564a0099631dd7846b99b9c06d967fce7
+        return redirect()->route("professores.index");
     }
 }

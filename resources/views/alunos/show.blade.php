@@ -16,10 +16,11 @@
 
             <div class="bg-white shadow-xl rounded-2xl p-8">
                 <div class="flex flex-row items-center text-left">
-                    {{-- Vamos por fotinho 
-                    div class="flex-shrink-0 mb-6 sm:mb-0 sm:mr-8">
-                        <div class="h-28 w-28 sm:h-32 sm:w-32 bg-sky-100 dark:bg-sky-700 rounded-full flex items-center justify-center text-sky-600 dark:text-sky-300 text-5xl sm:text-6xl font-bold">
-                        </div> --}}
+
+                    <div class="flex-shrink-0 mb-6 sm:mb-0 sm:mr-8">
+                        <div class="h-28 w-28 sm:h-32 sm:w-32 rounded-full flex items-center justify-center text-sky-600 dark:text-sky-300 text-5xl sm:text-6xl font-bold">
+                            <img src="{{ asset("storage/".$aluno->image) }}" alt="icone">
+                        </div> 
                     </div>
                     <div class="flex-grow">
                         <h2 class=" text-3xl font-bold text-gray-900 mb-2">{{ $aluno->nome }}</h2>
