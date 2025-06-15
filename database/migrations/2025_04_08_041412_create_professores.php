@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string("nome",40);
+            $table->string("cpf",11)->unique();
             $table->string("telefone",11);
             $table-> string("email",length: 70);
-            $table->string("image");
+            $table->string("image")->nullable();
         });
     }
 

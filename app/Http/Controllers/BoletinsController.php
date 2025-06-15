@@ -36,6 +36,7 @@ class BoletinsController extends Controller
      */
     public function store(StoreBoletimRequest $request)
     {
+    
         $boletim = $request->validated();
         Boletim::create($boletim);
         return redirect()->route("boletins.index");

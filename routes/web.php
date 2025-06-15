@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AlunosController;
+use App\Http\Controllers\ProfessoresController;
 use App\Http\Controllers\BoletinsController;
 use App\Http\Controllers\MateriasController;
 use App\Livewire\Settings\Appearance;
@@ -30,7 +31,10 @@ Route::resource('alunos',AlunosController::class)
 Route::resource('materias',MateriasController::class)
     ->only('index','create','update','store','show','edit','destroy');
     
-Route::resource('boletins',controller: BoletinsController::class);
+Route::resource('professores',controller: ProfessoresController::class);
+
+Route::resource('boletins',controller: BoletinsController::class)
+     ->parameters(['boletins' => 'boletim']);
 
 
 require __DIR__.'/auth.php';

@@ -7,16 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Boletim extends Model
 {
     protected $table = "boletins";
-    protected $fillable= ["nota","semestre","alunos_matricula","professores_id","materias_id"];
+    protected $fillable= ["nota","semestre","aluno_id","professor_id","materia_id"];
 
-    public function alunos(){
+    public function aluno(){
         return $this->belongsTo(Aluno::class);
     }
 
-    public function professores(){
+    public function professor(){
         return $this->belongsTo(Professor::class);
     }
-    public function materias(){
+    public function materia(){
         return $this->belongsTo(Materia::class);
     }
 }

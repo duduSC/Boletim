@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreAlunoRequest;
 use App\Http\Requests\StoreDataRequest;
 use Illuminate\Http\Request;
 use App\Models\Aluno;
@@ -29,7 +30,7 @@ class AlunosController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreDataRequest $request, ImageUpload $imagem)
+    public function store(StoreAlunoRequest $request, ImageUpload $imagem)
     {
         $daodsValidados= $request->validated();
         $aluno = Aluno::create($daodsValidados);
@@ -59,7 +60,7 @@ class AlunosController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(StoreDataRequest $request, string $id)
+    public function update(StoreAlunoRequest $request, string $id)
     {   
         $aluno= Aluno::findOrFail($id);
         $data= $request->validated();

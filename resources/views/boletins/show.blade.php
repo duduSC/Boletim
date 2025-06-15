@@ -6,7 +6,7 @@
                 <a href="{{ route('boletins.index') }}" class="text-gray-600 hover:text-sky-800 transition-colors">
                     <button class="cursor-pointer flex items-center">
                         <x-layouts.icons tipo="back" />
-                        <span class="ml-2 font-semibold">Voltar para a Lista</span>
+                        <span class="ml-2 font-semibold">Voltar</span>
                     </button>
                 </a>
             </div>

@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Aluno extends Model
 {
     protected $table = "alunos";
-    protected $fillable = ["nome","telefone","email","image"];
+    protected $fillable = ["nome","cpf","telefone","email","image"];
 }

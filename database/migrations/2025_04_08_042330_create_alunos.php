@@ -16,6 +16,7 @@ return new class extends Migration
     {
         Schema::create('alunos', function (Blueprint $table) {
             $table->id();
+            $table->string("cpf",11)->unique();
             $table->string("nome",50);
             $table->string("telefone",11);
             $table->string("email",70);

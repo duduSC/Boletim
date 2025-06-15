@@ -18,7 +18,6 @@
                 method="post">
                 @csrf
 
-                <!-- Campo Aluno -->
                 <div>
                     <label for="aluno_id" class="block text-lg font-semibold mb-2 text-gray-700">Nome do Aluno:</label>
                     <select name="aluno_id" id="aluno_id" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg shadow-sm " required>
@@ -78,7 +77,6 @@
                     @enderror
                 </div>
 
-                <!-- Botão de Envio -->
                 <input
                     id="enviar"
                     class="w-full bg-cyan-500/80 hover:bg-cyan-500 text-white font-bold py-3 px-4 rounded-lg shadow-md cursor-pointer mt-4"

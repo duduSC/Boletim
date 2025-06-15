@@ -10,28 +10,21 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
-        Schema::create('boletins', function (Blueprint $table) {
-            $table->id();
-            $table->float("nota");
-            $table->string("semestre",7);
-            $table->unsignedInteger("aluno_matricula");// só pode ter integer positivos
-            $table->unsignedInteger("professor_id");
-            $table->unsignedInteger("materia_id");
-            $table->foreign("aluno_matricula","aluno_fkeys")
-                    ->references("id")
-                    ->on("alunos");
-            $table->foreign("professor_id","professors_fkeys")
-                    ->references("id")
-                    ->on("professores");
-            $table->foreign("materia_id","materia_fkey")
-                    ->references("id")
-                    ->on("materias");
-            $table->unique(["aluno_matricula","materia_id","professor_id","semestre"],"uc_aluno_semestre_materia");
-            $table->timestamps();
-        });
-    }
+{
+    Schema::create('boletins', function (Blueprint $table) {
+        $table->id();
+        
+        $table->foreignId('aluno_id')->constrained('alunos')->onDelete('cascade');
+        $table->foreignId('professor_id')->constrained('professores')->onDelete('cascade');
+        $table->foreignId('materia_id')->constrained('materias')->onDelete('cascade');
+        
+        $table->string('semestre', 7);
+        $table->decimal('nota', 4, 2);
+        $table->timestamps();
 
+        $table->unique(['aluno_id', 'professor_id', 'materia_id', 'semestre']);
+    });
+}
     /**
      * Reverse the migrations.
      */

@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreDataRequest;
+use App\Http\Requests\StoreProfessorRequest;
 use Illuminate\Http\Request;
 use App\Models\Professor;
 use App\Services\ImageUpload;
 
-class ProfessorController extends Controller
+class ProfessoresController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,11 +24,12 @@ class ProfessorController extends Controller
         return view('professores.create');
     }
 
-    public function store(StoreDataRequest $request,ImageUpload $imagem)
+    public function store(StoreProfessorRequest $request,ImageUpload $imagem)
     {
         $professor= $request->validated();
-        Professor::create(attributes: $professor);
+        $professor= Professor::create(attributes: $professor);
         $professor->image = $imagem->SaveImage($request,$professor->id,"professores");;
+        $professor->save();
         return redirect()->route('professores.index');
     }
 

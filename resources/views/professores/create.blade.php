@@ -10,12 +10,12 @@
             </a>
         </div>
         <div class=" mx-auto px-4">
-            <h1 class="text-3xl font-bold text-center mb-5">Cadastrar Novo Aluno</h1>
+            <h1 class="text-3xl font-bold text-center mb-5">Cadastrar Novo Professor</h1>
 
             <form
                 enctype="multipart/form-data"
                 class="bg-sky-100 p-6 rounded-xl shadow-2xl flex flex-col space-y-5"
-                action="{{ route('alunos.store') }}"
+                action="{{ route('professores.store') }}"
                 method="post">
                 @csrf
 
@@ -25,7 +25,7 @@
                         placeholder-gray-400"
                     placeholder="Nome completo" required>
                 @error('nome')
-                                        <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
+                <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
 
                 @enderror
                 <label for="cpf" class=" text-lg font-semibold mb-1">CPF:</label>
@@ -34,7 +34,7 @@
                         placeholder-gray-400"
                     placeholder="xxx.xxx.xxx-xx" required>
                 @error('cpf')
-                                        <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
+                <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
 
                 @enderror
                 <label for="telefone" class=" text-lg font-semibold mb-1">Telefone:</label>
@@ -43,7 +43,7 @@
                          placeholder-gray-400"
                     placeholder="(XX) 9XXXX-XXXX">
                 @error('telefone')
-                                        <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
+                <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
 
                 @enderror
                 <label for="email" class=" text-lg font-semibold mb-1">Email:</label>
@@ -52,7 +52,7 @@
                         placeholder-gray-400"
                     placeholder="email@exemplo.com">
                 @error('email')
-                                        <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
+                <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
 
                 @enderror
 
