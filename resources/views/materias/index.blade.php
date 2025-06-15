@@ -3,7 +3,7 @@
 
         <div class="max-w-6xl mx-auto mt-12 px-6"> 
             <h1 class="flex text-4xl justify-center font-bold mb-8">Materias Cadastradas</h1>
-            <div class="mt-6 flex justify-end top-0 sticky">
+            <div class="mt-6 flex justify-end top-0 p-2 sticky">
                 <a href="{{ route('materias.create') }}"
                    class="bg-sky-300/80 hover:bg-sky-400/80 font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg">
                     Cadastrar Nova materia
