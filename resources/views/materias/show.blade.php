@@ -5,7 +5,7 @@
 
             <div class="flex flex-row justify-between items-center mb-8">
                 <h1 class="text-3xl font-bold order-1 text-left mt-0">
-                    Detalhes do Materia
+                    Detalhes do Matéria
                 </h1>
                 <a href="{{ url()->previous() }}"
                     class=" cursor-pointer inline-flex items-left">
@@ -18,10 +18,17 @@
             <div class="bg-white shadow-xl rounded-2xl p-8">
                 <div class="flex-grow">
                     <h2 class=" text-3xl font-bold text-gray-900 mb-2">{{ $materia->nome }}</h2>
-                    <div class="space-y-1 text-md text-gray-600 00">
+                    <div class="space-y-1 text-md text-gray-600">
                         <div>
-                            <span class="font-semibold">Carga Horária:</span> {{ $materia->carga_horaria  }}
+                            <span class="font-semibold">Carga Horária:</span> {{ $materia->carga_horaria }}
+                        </div>
+
+                        <div class="mt-4">
+                            <span class="font-semibold">Descrição:</span>
+                            <p class="text-justify">
+                                {{ $materia->descricao }}
                             </p>
+                        </div>
                     </div>
                 </div>
             </div>

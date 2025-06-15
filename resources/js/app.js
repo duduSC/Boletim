@@ -4,7 +4,7 @@
 //     button.addEventListener('click',function(){
 //         const form = this.closet('form');
 //         // const nome = this.dataset.nome;
-    
+
 // Swal.fire({
 //   title: "Are you sure?",
 //   text: "You won't be able to revert this!",
@@ -26,10 +26,20 @@
 // })
 // })})
 
+
+
+document.querySelectorAll("form").forEach(x=>{
+  x.addEventListener("submit",()=>{
+ var botao= x.querySelector("#enviar")
+    botao.disabled=true
+  })
+})
+
+
 import Swal from 'sweetalert2';
 
 document.querySelectorAll('.btn-excluir').forEach(button => {
-  button.addEventListener('click', function() {
+  button.addEventListener('click', function () {
     const form = this.closest('form');
     const nome = this.dataset.nome;
 

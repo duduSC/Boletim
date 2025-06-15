@@ -17,9 +17,9 @@ return new class extends Migration
         Schema::create('alunos', function (Blueprint $table) {
             $table->id();
             $table->string("nome",50);
-            $table->string("telefone",16);
+            $table->string("telefone",11);
             $table->string("email",70);
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
             
         });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreMateriaRequest;
 use Illuminate\Http\Request;
 use App\Models\Materia;
 class MateriasController extends Controller
@@ -26,13 +27,10 @@ class MateriasController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreMateriaRequest $request)
     {
-        $materias= new Materia([
-            "nome" => $request->input("nome"),
-            "carga_horaria"=> $request->input("carga_horaria"),
-        ]);
-        $materias->save();
+        $materia = $request->validated();
+        Materia::create($materia);
         return redirect()->route("materias.index");
     }
     /**
@@ -58,8 +56,10 @@ class MateriasController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        
         $materia= Materia::findOrFail($id);
-        $materia->update($request->all());
+        $data= $request->validated();
+        $materia->update($data);
         return view("materias.index");
     }
 

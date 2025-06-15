@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreDataRequest;
 use Illuminate\Http\Request;
 use App\Models\Professor;
+use App\Services\ImageUpload;
 
 class ProfessorController extends Controller
 {
@@ -22,14 +24,11 @@ class ProfessorController extends Controller
         return view('professores.create');
     }
 
-    public function store(Request $request)
+    public function store(StoreDataRequest $request,ImageUpload $imagem)
     {
-        $professor = new Professor([
-            'nome' => $request->input('nome'),
-            'telefone' => $request->input('telefone'),
-            'email' => $request->input('email')
-        ]);
-        $professor-> save();
+        $professor= $request->validated();
+        Professor::create(attributes: $professor);
+        $professor->image = $imagem->SaveImage($request,$professor->id,"professores");;
         return redirect()->route('professores.index');
     }
 

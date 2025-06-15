@@ -15,19 +15,19 @@ return new class extends Migration
             $table->id();
             $table->float("nota");
             $table->string("semestre",7);
-            $table->unsignedInteger("alunos_matricula");// só pode ter integer positivos
-            $table->unsignedInteger("professores_id");
-            $table->unsignedInteger("materias_id");
-            $table->foreign("alunos_matricula","alunos_fkeys")
+            $table->unsignedInteger("aluno_matricula");// só pode ter integer positivos
+            $table->unsignedInteger("professor_id");
+            $table->unsignedInteger("materia_id");
+            $table->foreign("aluno_matricula","aluno_fkeys")
                     ->references("id")
                     ->on("alunos");
-            $table->foreign("professores_id","professores_fkeys")
+            $table->foreign("professor_id","professors_fkeys")
                     ->references("id")
                     ->on("professores");
-            $table->foreign("materias_id","materias_fkey")
+            $table->foreign("materia_id","materia_fkey")
                     ->references("id")
                     ->on("materias");
-            $table->unique(["alunos_matricula","materias_id","semestre"],"uc_aluno_semestre_materia");
+            $table->unique(["aluno_matricula","materia_id","professor_id","semestre"],"uc_aluno_semestre_materia");
             $table->timestamps();
         });
     }

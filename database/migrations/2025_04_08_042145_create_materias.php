@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('materias', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string("nome",40);
+            $table->string("nome", 40);
             $table->integer("carga_horaria");
+            $table->string("descricao",80)->nullable();
         });
     }
 

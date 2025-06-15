@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreDataRequest;
 use Illuminate\Http\Request;
 use App\Models\Aluno;
+use App\Services\ImageUpload;
 use Illuminate\Support\Str; 
 class AlunosController extends Controller
 {
@@ -27,22 +29,11 @@ class AlunosController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreDataRequest $request, ImageUpload $imagem)
     {
-        $aluno = new Aluno([
-            "nome"=> $request->input("nome"),
-            "telefone"=> $request->input("telefone"),
-            "email"=> $request->input("email"),
-            "image"=> "images/user_image.png"
-        ]);
-        $aluno->save();  
-
-        $nomeArquivo= Str::slug($request->input("nome"))."_"."foto".$aluno->id;
-        $imagem = 'images/user_image.png';
-        if ($request->hasFile("image")) {
-            $imagem= $request->file("image")->storeAs("images",$nomeArquivo,"public");
-        }
-        $aluno->image = $imagem;
+        $daodsValidados= $request->validated();
+        $aluno = Aluno::create($daodsValidados);
+        $aluno->image = $imagem->SaveImage($request,$aluno->id,"Alunos");;
         $aluno->save();
         return redirect()->route("alunos.index");
     }
@@ -68,15 +59,11 @@ class AlunosController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
+    public function update(StoreDataRequest $request, string $id)
+    {   
         $aluno= Aluno::findOrFail($id);
-        
-        $aluno->update([
-            "nome"=> $request->input("nome"),
-            "telefone"=> $request->input("telefone"),
-            "email"=> $request->input("email"),
-        ]);
+        $data= $request->validated();
+        $aluno->update($data);
         return redirect()->route("alunos.index");
     }
 

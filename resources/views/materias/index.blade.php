@@ -3,7 +3,12 @@
 
         <div class="max-w-6xl mx-auto mt-12 px-6"> 
             <h1 class="flex text-4xl justify-center font-bold mb-8">Materias Cadastradas</h1>
-
+            <div class="mt-6 flex justify-end top-0 sticky">
+                <a href="{{ route('materias.create') }}"
+                   class="bg-sky-300/80 hover:bg-sky-400/80 font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg">
+                    Cadastrar Nova materia
+                </a>
+            </div>
             <table class="w-full bg-sky-100/50 table-auto rounded-xl overflow-hidden shadow-sm border-collapse">
                 <thead class="bg-sky-200/50">
                     <tr>
@@ -30,12 +35,6 @@
                 </tbody>
             </table>
 
-            <div class="mt-6 flex justify-end">
-                <a href="{{ route('materias.create') }}"
-                   class="bg-sky-300/80 hover:bg-sky-400/80 font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg">
-                    Cadastrar Nova materia
-                </a>
-            </div>
         </div>
     </body>
 </x-layouts.app>
