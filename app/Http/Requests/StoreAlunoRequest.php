@@ -39,13 +39,14 @@ class StoreAlunoRequest extends FormRequest
                 "required",
                 "cpf"
             ],
+            
         ];
 
         if ($this->isMethod('put') || $this->isMethod('patch')) {
-            $professor = $this->route('professor');
-            $especifedRules['cpf'][] = Rule::unique('professores')->ignore($professor->id);
+            $aluno = $this->route('aluno');
+            $especifedRules['cpf'][] = Rule::unique('alunos')->ignore($aluno->id);
         } else {
-            $especifedRules['cpf'][] = 'unique:professores,cpf';
+            $especifedRules['cpf'][] = 'unique:alunos,cpf';
         }
 
         return array_merge($commonRules, $especifedRules);
