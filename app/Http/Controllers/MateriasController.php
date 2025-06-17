@@ -54,13 +54,13 @@ class MateriasController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreMateriaRequest $request, string $id)
     {
         
         $materia= Materia::findOrFail($id);
         $data= $request->validated();
         $materia->update($data);
-        return view("materias.index");
+        return redirect()->route("materias.index");
     }
 
     /**

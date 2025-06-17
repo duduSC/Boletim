@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Traits\ValidatePeople;
 use Illuminate\Foundation\Http\FormRequest;
-use illuminate\Validation\Rule;
+use Illuminate\Validation\Rule;
 
 class StoreAlunoRequest extends FormRequest
 {
@@ -39,12 +39,12 @@ class StoreAlunoRequest extends FormRequest
                 "required",
                 "cpf"
             ],
-            
         ];
 
         if ($this->isMethod('put') || $this->isMethod('patch')) {
             $aluno = $this->route('aluno');
-            $especifedRules['cpf'][] = Rule::unique('alunos')->ignore($aluno->id);
+            $especifedRules['cpf'][] = Rule::unique('alunos', "cpf")->ignore($aluno->id);
+            $especifedRules['cpf'][0] ="nullable";
         } else {
             $especifedRules['cpf'][] = 'unique:alunos,cpf';
         }

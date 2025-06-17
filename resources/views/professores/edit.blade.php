@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="pt-5 flex flex-row-reverse justify-start space-x-4 space-x-reverse space-y-0">
-                    <a href="{{ route('professors.show', $professor) }}"
+                    <a href="{{ route('professores.show', $professor) }}"
                         class="w-full sm:w-auto inline-flex justify-center items-center px-6 py-3 border rounded-lg shadow-md border-gray-300 bg-red-600 hover:bg-red-700">
                         Cancelar </a>
 

@@ -13,7 +13,7 @@
                 @method('PUT')
 
                 <div>
-                    <label for="nome" class=" text-sm font-semibold mb-1.5">Nome Completo:</label>
+                    <label for="nome" class=" text-sm font-semibold mb-1.5">Nome:</label>
                     <input type="text" id="nome" name="nome" value="{{ old('nome', $materia->nome) }}"
                         class="w-full px-4 py-2.5 border border-gray-300 rounded-lg shadow-sm bg-slate-50/70"
                         placeholder="{{ $materia->nome }}" required>
@@ -21,10 +21,16 @@
 
 
                 <div>
-                    <label for="email" class="block text-sm font-semibold text-gray-70 mb-1.5">Email:</label>
-                    <input type="email" id="email" name="email" value="{{ old('email', $materia->carga_horaria) }}" {{-- Tipo mudado para 'email' --}}
+                    <label for="carga_horaria" class="block text-sm font-semibold text-gray-70 mb-1.5">Carga Horária:</label>
+                    <input type="carga_horaria" id="carga_horaria" name="carga_horaria" value="{{ old('carga_horaria', $materia->carga_horaria) }}" 
                         class="w-full px-4 py-2.5 border border-gray-300 bg-slate-50/70 rounded-lg shadow-sm"
-                        placeholder="{{ $materia->email }}" required>
+                        placeholder="{{ $materia->carga_horaria }}" required>
+                </div>
+                 <div>
+                    <label for="descricao" class="block text-sm font-semibold text-gray-70 mb-1.5">Descrição:</label>
+                    <input type="descricao" id="descricao" name="descricao" value="{{ old('descricao', $materia->descricao) }}"
+                        class="w-full px-4 py-2.5 border border-gray-300 bg-slate-50/70 rounded-lg shadow-sm"
+                        placeholder="{{ $materia->descricao }}" required>
                 </div>
 
                 <div class="pt-5 flex flex-row-reverse justify-start space-x-4 space-x-reverse space-y-0">

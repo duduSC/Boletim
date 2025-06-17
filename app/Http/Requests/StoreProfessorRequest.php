@@ -44,6 +44,7 @@ class StoreProfessorRequest extends FormRequest
         if ($this->isMethod('put') || $this->isMethod('patch')) {
             $professor = $this->route('professor');
             $especifedRules['cpf'][] = Rule::unique('professores')->ignore($professor->id);
+            $especifedRules["cpf"][0]="nullable";
         } else {
             $especifedRules['cpf'][] = 'unique:professores,cpf';
         }

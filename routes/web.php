@@ -31,8 +31,8 @@ Route::resource('alunos',AlunosController::class)
 Route::resource('materias',MateriasController::class)
     ->only('index','create','update','store','show','edit','destroy');
     
-Route::resource('professores',controller: ProfessoresController::class);
-
+Route::resource('professores',controller: ProfessoresController::class)
+    ->parameters(["professores"=>"professor"]);
 Route::resource('boletins',controller: BoletinsController::class)
      ->parameters(['boletins' => 'boletim']);
 

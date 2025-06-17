@@ -45,11 +45,11 @@ class ProfessoresController extends Controller
         return view('professores.edit', compact('professor'));
     }
 
-    public function update(Request $request, string $id)
+    public function update(StoreProfessorRequest $request, Professor $professor)
     {
-        $professor= Professor::findOrFail($id);    
-        $professor->update($request->all());
-        return view('professores.index');
+        $data= $request->validated();
+        $professor->update($data);
+        return redirect()->route('professores.index');
     }
 
     /**

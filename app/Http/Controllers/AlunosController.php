@@ -60,9 +60,8 @@ class AlunosController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(StoreAlunoRequest $request, string $id)
+    public function update(StoreAlunoRequest $request,Aluno $aluno)
     {   
-        $aluno= Aluno::findOrFail($id);
         $data= $request->validated();
         $aluno->update($data);
         return redirect()->route("alunos.index");

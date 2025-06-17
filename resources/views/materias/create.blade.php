@@ -46,6 +46,7 @@
 
                 @enderror
                 <input
+                id="enviar"
                     class="w-full bg-cyan-500/50 hover:bg-cyan-500 text-white font-bold py-3 px-4 rounded-lg shadow-md 
                            hover:shadow-lg cursor-pointer"
                     type="submit"
