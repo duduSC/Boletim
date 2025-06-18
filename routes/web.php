@@ -4,6 +4,7 @@ use App\Http\Controllers\AlunosController;
 use App\Http\Controllers\ProfessoresController;
 use App\Http\Controllers\BoletinsController;
 use App\Http\Controllers\MateriasController;
+use App\Http\Controllers\Professores_Materias;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
@@ -33,8 +34,10 @@ Route::resource('materias',MateriasController::class)
     
 Route::resource('professores',controller: ProfessoresController::class)
     ->parameters(["professores"=>"professor"]);
+
 Route::resource('boletins',controller: BoletinsController::class)
      ->parameters(['boletins' => 'boletim']);
 
+Route::resource("professores_materias",Professores_Materias::class);
 
 require __DIR__.'/auth.php';

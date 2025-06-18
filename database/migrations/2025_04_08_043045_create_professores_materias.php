@@ -13,14 +13,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('professores_materias', function (Blueprint $table) {
-            $table->unsignedInteger("materias_id");
-            $table->unsignedInteger("professores_id");
-            $table->foreign("materias_id","professores_fkey")
-                    ->references("id")
-                    ->on('professores');
-            $table->foreign("professores_id","materias_fkey")
-                    ->references("id")
-                    ->on('materias');
+            $table->id();
+            $table->foreignId("materia_id")->constrained("materias")->onDelete("cascade");
+            $table->foreignId("professor_id")->constrained("professores")->onDelete("cascade");
+            $table->unique(["materia_id","professor_id"],"professor_materia");
             $table->timestamps();
         });
     }

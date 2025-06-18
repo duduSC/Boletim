@@ -21,6 +21,8 @@
                 <flux:navlist.item icon="queue-list" :href="route(name: 'materias.index')">Materias</flux:navlis.item>
                 <flux:navlist.item icon="queue-list" :href="route(name: 'professores.index')">Professores</flux:navlis.item>
                 <flux:navlist.item icon="queue-list" :href="route(name: 'boletins.index')">Boletins</flux:navlis.item>
+                <flux:navlist.item icon="queue-list" :href="route(name: 'professores_materias.index')">Professores e Matérias</flux:navlis.item>
+
             </flux:navlist.group>
         </flux:navlist>
 

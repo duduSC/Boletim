@@ -1,7 +1,13 @@
+# Boletim
 Trabalho da disciplina Tópicos, consiste em um gerenciador de boletim escolar, podendo adicionar os alunos, professores, disciplinas e o boletim em si.
 
-##composer install
+### Instalação
+1. composer install
 
-##npm install
+2. npm install
 
-##composer require geekcom/validator-docs
+3. composer require geekcom/validator-docs
+
+4. npm install sweetalert2
+
+5. php artisan storage:link
