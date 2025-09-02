@@ -37,7 +37,6 @@ class StoreProfessorRequest extends FormRequest
         $especifedRules = [
             "cpf" => [
                 "required",
-                "cpf"
             ],
         ];
 

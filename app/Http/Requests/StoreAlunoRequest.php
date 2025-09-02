@@ -37,7 +37,6 @@ class StoreAlunoRequest extends FormRequest
         $especifedRules = [
             "cpf" => [
                 "required",
-                "cpf"
             ],
         ];
 
